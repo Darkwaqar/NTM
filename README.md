@@ -1,7 +1,8 @@
 # NTM
 TensorFlow implementation of Neural Turing Machines (NTM); 
 
-The models are ready to use -- they are encapsulated into classes `NTMCell` and `MANNCell`, and the usage is similar to `LSTMCell` in TensorFlow, so you can apply these models easily in other programs. The sample code is also provided
+
+
 
 ## Prerequisites
 
@@ -18,6 +19,7 @@ Graves, Alex, Greg Wayne, and Ivo Danihelka. "[Neural turing machines.](https://
 ### Usage
 
 #### Class NTMCell()
+All the model avalible in this repository are ready to use, see the folder /ntm --- they are encapsulated into classes `NTMCell`, and the usage is similar to `LSTMCell` in TensorFlow, so you can apply these models easily in other programs. The sample code is also provided
 
 The usage of class `NTMCell` in `ntm/ntm_cell.py` is similar to `tf.contrib.rnn.BasicLSTMCell` in TensorFlow. The basic pseudocode is as follows:
 
@@ -41,23 +43,17 @@ for t in range(seq_length):
 
 #### Train and Test
 
-To train the model, run:
+For Train the model use the phython console, and type following.
 
 ```
 python copy_task.py
 ```
-You can specify training options including parameters to the model via flags, such as `--model` (default is NTM), `--batch_size` and so on. See code for more detail.
+You can specify training options including parameters to the model via flags, such as `--model` (default is NTM), `--batch_size` and so on. See code for more detail in the slides.
 
-To test the model, run:
+To test the model use the following command into the python console:
 
 ```
 python copy_task.py --mode test
 ```
 
 You can specify testing options via flags such as `--test_seq_length`.
-
-### Result (Copy task)
-
-![](images/copy_task_head.png) | ![](images/copy_task_loss.png)
----|---
-Vector of weighting (left: read vector; right: write vector; shift range: 1) | Training loss
