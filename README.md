@@ -57,3 +57,13 @@ python copy_task.py --mode test
 ```
 
 You can specify testing options via flags such as `--test_seq_length`.
+
+## Sample Outputs
+
+Below are some sample outputs on the Copy and Associative Recall tasks. We replicated the hyperparameters from the [original paper](https://arxiv.org/abs/1410.5401) for the 2 tasks:
+
+- Memory Size: 128 X 20
+- Controller: LSTM - 100 units
+- Optimizer: RMSProp - learning rate = 10^-4
+
+The Copy task network was trained on sequences of length sampled from Uniform(1,20) with 8-dimensional random bit vectors. The Associative Recall task network was trained on sequences with the number of items sampled from Uniform(2,6) each item consisted of 3 6-dimensional random bit vectors.
