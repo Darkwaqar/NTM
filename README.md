@@ -40,6 +40,21 @@ for t in range(seq_length):
     output, state = cell(input[i], state)
     output_list.append(output)
 ```
+New Implementation.
+Dynamic intilization implementation in ntm.py
+
+```python
+from ntm import NTMCell
+
+cell = NTMCell(num_controller_layers, num_controller_units, num_memory_locations, memory_size,
+    num_read_heads, num_write_heads, shift_range=3, output_dim=num_bits_per_output_vector,
+    clip_value=clip_controller_output_to_value)
+
+outputs, _ = tf.nn.dynamic_rnn(
+    cell=cell,
+    inputs=inputs,
+    time_major=False)
+```
 
 #### Train and Test
 
